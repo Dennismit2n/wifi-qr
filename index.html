@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WiFi QR Card · wifi-qr</title>
+  <meta name="description" content="Create a WiFi QR code card — guests scan and connect. Free, open source, works offline. Your password never leaves your browser. / WLAN-QR-Code erstellen — kostenlos, offline, ohne Datenübertragung.">
+  <link rel="canonical" href="https://dennismit2n.github.io/wifi-qr/">
+  <meta property="og:title" content="WiFi QR Card — scan &amp; connect">
+  <meta property="og:description" content="Create a printable WiFi QR card in your browser. 100% local, free, open source.">
+  <meta property="og:url" content="https://dennismit2n.github.io/wifi-qr/">
+  <meta property="og:image" content="https://dennismit2n.github.io/wifi-qr/assets/promo.png">
+  <meta name="theme-color" content="#0e7490">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <!--
+    Analytics (GoatCounter, cookieless — disclosed in the footer):
+    1. Create a free account at https://www.goatcounter.com
+    2. Uncomment the line below and replace YOURCODE with your site code.
+    <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  -->
+</head>
+<body>
+<div class="app-shell">
+  <header class="site-header">
+    <div class="brand">
+      <svg class="brand-icon" viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="2" y="2" width="44" height="44" rx="11" fill="var(--accent)"/>
+        <path d="M12 21.5c6.6-6 17.4-6 24 0" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>
+        <path d="M16.5 27.5c4.2-3.8 10.8-3.8 15 0" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>
+        <circle cx="24" cy="34" r="2.6" fill="#fff"/>
+      </svg>
+      <div>
+        <h1 data-i18n="appName">WiFi QR Card</h1>
+        <p class="tagline" data-i18n="tagline">Create a QR code for your WiFi – guests scan and they're in.</p>
+      </div>
+    </div>
+    <label class="lang-wrap">
+      <span class="visually-hidden" data-i18n="langLabel">Language</span>
+      <select id="langSelect" data-i18n-aria="langLabel"></select>
+    </label>
+  </header>
+
+  <main>
+    <section class="panel form-panel" aria-labelledby="formHeading">
+      <form id="wifiForm" autocomplete="off" novalidate>
+        <div class="field">
+          <label for="ssid" data-i18n="ssidLabel">Network name (SSID)</label>
+          <input id="ssid" name="wifi-network" type="text" maxlength="32" data-i18n-ph="ssidPlaceholder" autocomplete="off" autocapitalize="none" spellcheck="false">
+        </div>
+
+        <div class="field">
+          <label for="security" data-i18n="securityLabel">Security</label>
+          <select id="security">
+            <option value="WPA" selected data-i18n="secWpa">WPA / WPA2 / WPA3 (default)</option>
+            <option value="WEP" data-i18n="secWep">WEP (legacy)</option>
+            <option value="nopass" data-i18n="secNone">Open (no password)</option>
+          </select>
+        </div>
+
+        <div class="field" id="passwordField">
+          <label for="password" data-i18n="passwordLabel">Password</label>
+          <div class="password-wrap">
+            <input id="password" name="wifi-key" type="password" maxlength="63" data-i18n-ph="passwordPlaceholder" autocomplete="off" autocapitalize="none" spellcheck="false">
+            <button type="button" id="togglePw" class="icon-btn" data-i18n-aria="showPassword" aria-pressed="false">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 5c-5 0-9 4.5-10 7 1 2.5 5 7 10 7s9-4.5 10-7c-1-2.5-5-7-10-7zm0 11.5A4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 0 1 0 9zM12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="currentColor"/></svg>
+            </button>
+          </div>
+          <p class="error" id="pwError" hidden data-i18n="errNoPassword">Please enter a password.</p>
+        </div>
+
+        <div class="field checks">
+          <label class="check">
+            <input type="checkbox" id="hiddenNet">
+            <span data-i18n="hiddenLabel">Hidden network</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="showPwOnCard">
+            <span data-i18n="showPwOnCard">Show password on the card</span>
+          </label>
+        </div>
+      </form>
+
+      <p class="privacy-note">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 1 1 6 0v3H9z" fill="currentColor"/></svg>
+        <span><span data-i18n="privacyNote">Your password never leaves your device.</span>
+        <span data-i18n="offlineNote">Even works offline.</span></span>
+      </p>
+    </section>
+
+    <section class="panel preview-panel">
+      <div class="wifi-card" id="card">
+        <div class="card-head">
+          <svg class="card-wifi-icon" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M8 22c9.4-8.5 22.6-8.5 32 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <path d="M14.5 29.5c5.6-5 13.4-5 19 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="24" cy="37" r="3.2" fill="currentColor"/>
+          </svg>
+          <span class="card-title" data-i18n="cardTitle">Wi-Fi</span>
+        </div>
+        <div class="qr-box" id="qrBox" role="img" aria-label="QR code"></div>
+        <p class="card-scan" data-i18n="cardScan">Scan to connect</p>
+        <div class="card-detail">
+          <span class="card-label" data-i18n="cardNetwork">Network</span>
+          <span class="card-value" id="cardSsid">&nbsp;</span>
+        </div>
+        <div class="card-detail" id="cardPwRow" hidden>
+          <span class="card-label" data-i18n="cardPassword">Password</span>
+          <span class="card-value mono" id="cardPw"></span>
+        </div>
+        <p class="card-footer"><span data-i18n="cardCreatedWith">Created with</span> dennismit2n.github.io/wifi-qr</p>
+      </div>
+
+      <p class="error" id="ssidError" hidden data-i18n="errNoSsid">Please enter a network name.</p>
+
+      <div class="actions">
+        <button type="button" id="btnShare" class="btn primary" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M18 8a3 3 0 1 0-2.83-4H15a3 3 0 0 0 .04.49L8.9 7.56a3 3 0 1 0 0 8.88l6.15 3.07A3 3 0 1 0 18 16a3 3 0 0 0-2.15.91l-5.9-2.95a3 3 0 0 0 0-1.92l5.9-2.95A3 3 0 0 0 18 8z" fill="currentColor"/></svg>
+          <span data-i18n="btnShare">Share</span>
+        </button>
+        <button type="button" id="btnPng" class="btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v10.6l-3.3-3.3-1.4 1.4L12 17.4l4.7-5.7-1.4-1.4L13 13.6V3h-1zM5 19h14v2H5z" fill="currentColor"/></svg>
+          <span data-i18n="btnPng">Download PNG</span>
+        </button>
+        <button type="button" id="btnSvg" class="btn"><span data-i18n="btnSvg">QR as SVG</span></button>
+        <button type="button" id="btnCopy" class="btn"><span data-i18n="btnCopy">Copy</span></button>
+        <span class="print-group">
+          <button type="button" id="btnPrint" class="btn">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 3h12v4H6V3zm-2 6h16a2 2 0 0 1 2 2v6h-4v4H6v-4H2v-6a2 2 0 0 1 2-2zm4 8v2h8v-2H8z" fill="currentColor"/></svg>
+            <span data-i18n="btnPrint">Print</span>
+          </button>
+          <select id="printMode" data-i18n-aria="btnPrint">
+            <option value="card" data-i18n="printCard">Card</option>
+            <option value="tent" data-i18n="printTent">Table tent</option>
+          </select>
+        </span>
+      </div>
+      <p class="toast" id="toast" role="status" hidden></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="https://github.com/Dennismit2n/wifi-qr" rel="noopener">
+      <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" fill="currentColor"/></svg>
+      <span data-i18n="footerSource">Open source on GitHub</span>
+    </a>
+    <span class="sep">·</span>
+    <span data-i18n="footerTranslate">Some translations are machine-generated – corrections welcome!</span>
+    <span class="sep analytics-note" hidden>·</span>
+    <span class="analytics-note" data-i18n="footerAnalytics" hidden>Anonymous visit counting.</span>
+  </footer>
+</div>
+
+<div id="printArea" aria-hidden="true"></div>
+
+<script src="./js/vendor/qrcode.js"></script>
+<script src="./js/vendor/qrcode_UTF8.js"></script>
+<script src="./js/i18n.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
