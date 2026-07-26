@@ -17,7 +17,7 @@ Erstelle eine druckfertige WLAN-Karte mit QR-Code direkt im Browser. Gäste halt
 
 ## Datenschutz
 
-Die ganze App besteht aus einer Handvoll statischer Dateien. Kein Server, kein CDN, keine Cookies, kein Tracking. Der QR-Code entsteht lokal in deinem Browser — schalte den Flugmodus ein, es funktioniert trotzdem. Du musst das nicht glauben: Öffne die DevTools und beobachte den Netzwerk-Tab, oder lies den Quellcode; er liegt komplett hier.
+Die ganze App besteht aus einer Handvoll statischer Dateien. Kein Server, kein CDN, keine Cookies, kein Konto. Der QR-Code entsteht lokal in deinem Browser — schalte den Flugmodus ein, es funktioniert trotzdem. Du musst das nicht glauben: Öffne die DevTools und beobachte den Netzwerk-Tab, oder lies den Quellcode; er liegt komplett hier.
 
 *Statistik:* Die App nutzt [GoatCounter](https://www.goatcounter.com) für anonyme Besucherzählung ohne Cookies (offen im Footer deklariert). Das Skript liegt lokal in `js/vendor/count.js`; die einzige externe Anfrage ist das Zählpixel. Keine persönlichen Daten, keine Cookies, kein seitenübergreifendes Tracking — und dein WLAN-Passwort ist nie beteiligt.
 

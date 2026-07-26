@@ -1,7 +1,7 @@
 /* wifi-qr service worker — bump CACHE on every deploy so clients update cleanly */
 'use strict';
 
-var CACHE = 'wifi-qr-v2';
+var CACHE = 'wifi-qr-v3';
 var ASSETS = [
   './',
   './index.html',
@@ -16,6 +16,7 @@ var ASSETS = [
   './icons/favicon-32.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
+  './icons/maskable-512.png',
   './icons/apple-touch-icon.png'
 ];
 
