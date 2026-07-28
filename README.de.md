@@ -11,7 +11,7 @@ Erstelle eine druckfertige WLAN-Karte mit QR-Code direkt im Browser. Gäste halt
 - 📶 **Alle Netzwerktypen** — WPA / WPA2 / WPA3, WEP, offene und versteckte Netzwerke
 - 🖨️ **Druckfertig** — gestaltetes Kärtchen und faltbarer Tischaufsteller, direkt aus dem Druckdialog
 - 📤 **Teilen & Exportieren** — natives Teilen-Menü, PNG-Download, SVG für den Profi-Druck, Kopieren in die Zwischenablage
-- 🌍 **9 Sprachen** — Deutsch, English, Español, Français, Italiano, Türkçe, हिन्दी, 中文, 日本語 (automatisch erkannt)
+- 🌍 **12 Sprachen** — Deutsch, English, Español, Français, Italiano, Português, Türkçe, Русский, हिन्दी, 中文, 日本語, 한국어 (automatisch erkannt)
 - 📱 **Installierbare PWA** — zum Startbildschirm hinzufügen; funktioniert komplett offline
 - 🔒 **Radikal privat** — dein Passwort verlässt nie deinen Browser
 

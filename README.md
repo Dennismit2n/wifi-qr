@@ -11,7 +11,7 @@ Create a printable WiFi QR card right in your browser. Guests point their phone 
 - 📶 **All network types** — WPA / WPA2 / WPA3, WEP, open and hidden networks
 - 🖨️ **Print-ready** — designed card and a foldable table tent, straight from the print dialog
 - 📤 **Share & export** — native share sheet, PNG download, SVG for professional printing, copy to clipboard
-- 🌍 **9 languages** — Deutsch, English, Español, Français, Italiano, Türkçe, हिन्दी, 中文, 日本語 (auto-detected)
+- 🌍 **12 languages** — Deutsch, English, Español, Français, Italiano, Português, Türkçe, Русский, हिन्दी, 中文, 日本語, 한국어 (auto-detected)
 - 📱 **Installable PWA** — add it to your home screen; works fully offline
 - 🔒 **Radically private** — your password never leaves your browser
 
