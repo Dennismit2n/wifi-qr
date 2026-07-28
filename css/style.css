@@ -1,6 +1,7 @@
 /* wifi-qr — mobile-first, light/dark via prefers-color-scheme, print styles at the end */
 
 :root {
+  color-scheme: light;
   --accent: #0e7490;
   --accent-strong: #155e75;
   --bg: #f1f5f9;
@@ -15,8 +16,12 @@
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
 }
 
+/* Dark theme comes in two doors with identical furniture:
+   1) system preference (unless the user forced light),
+   2) the theme dropdown forcing dark. Keep both in sync! */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --accent: #22d3ee;
     --accent-strong: #67e8f9;
     --bg: #0b1220;
@@ -28,6 +33,20 @@
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     /* the card itself stays light: it is a preview of a printed object */
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --accent: #22d3ee;
+  --accent-strong: #67e8f9;
+  --bg: #0b1220;
+  --panel: #101a2c;
+  --text: #e2e8f0;
+  --text-soft: #94a3b8;
+  --border: #1e293b;
+  --error: #f87171;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  /* the card itself stays light: it is a preview of a printed object */
 }
 
 * { box-sizing: border-box; }
@@ -79,6 +98,8 @@ body {
 .brand h1 { margin: 0; font-size: 1.35rem; line-height: 1.2; }
 
 .tagline { margin: 0.15rem 0 0; color: var(--text-soft); font-size: 0.92rem; }
+
+.header-controls { display: flex; align-items: center; gap: 0.5rem; }
 
 .lang-wrap select,
 #printMode {
@@ -295,14 +316,16 @@ main {
 }
 
 @media (prefers-color-scheme: dark) {
-  .btn.primary { color: #0b1220; }
+  :root:not([data-theme="light"]) .btn.primary { color: #0b1220; }
 }
+:root[data-theme="dark"] .btn.primary { color: #0b1220; }
 
 .btn.primary:hover:not(:disabled) { background: var(--accent-strong); color: #fff; }
 
 @media (prefers-color-scheme: dark) {
-  .btn.primary:hover:not(:disabled) { color: #0b1220; }
+  :root:not([data-theme="light"]) .btn.primary:hover:not(:disabled) { color: #0b1220; }
 }
+:root[data-theme="dark"] .btn.primary:hover:not(:disabled) { color: #0b1220; }
 
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
