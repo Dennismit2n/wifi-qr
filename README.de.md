@@ -31,6 +31,8 @@ node tools/dev-server.js
 
 Dann http://localhost:8613 öffnen. Ändern, neu laden, fertig.
 
+**Beim Deploy:** die `CACHE`-Konstante in [sw.js](sw.js) hochzählen, damit installierte Clients die neue Version sofort bekommen. (Der Service Worker aktualisiert gecachte Dateien zusätzlich im Hintergrund — stale-while-revalidate —, ein vergessener Bump heilt sich also beim nächsten Besuch von selbst.)
+
 ## Übersetzungen
 
 Alle Oberflächen-Texte liegen in [js/i18n.js](js/i18n.js). Einige Übersetzungen sind maschinell erstellt — wenn etwas in deiner Sprache seltsam klingt, freuen wir uns sehr über Korrekturen per Pull Request oder Issue!
