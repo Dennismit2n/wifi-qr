@@ -44,4 +44,4 @@ Interface strings live in [js/i18n.js](js/i18n.js). Some translations are machin
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) for everything in this repository. The vendored files carry their own, both stated in their file headers: the QR generator by Kazuhiko Arase is MIT (credited above), and `js/vendor/count.js` is GoatCounter's counter script under the ISC license.

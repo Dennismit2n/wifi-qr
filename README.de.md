@@ -44,4 +44,4 @@ Alle Oberflächen-Texte liegen in [js/i18n.js](js/i18n.js). Einige Übersetzunge
 
 ## Lizenz
 
-[MIT](LICENSE)
+[MIT](LICENSE) für alles in diesem Repository. Die lokal eingebundenen Fremddateien tragen ihre eigene Lizenz, beide im Kopf der Datei angegeben: der QR-Generator von Kazuhiko Arase steht unter MIT (oben genannt), und `js/vendor/count.js` ist das Zählskript von GoatCounter unter der ISC-Lizenz.
