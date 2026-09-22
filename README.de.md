@@ -6,6 +6,8 @@
 
 Erstelle eine druckfertige WLAN-Karte mit QR-Code direkt im Browser. Gäste halten einfach die Handy-Kamera auf den Code — keine App, kein Passwort-Abtippen — und sind verbunden. Perfekt für den Kühlschrank, das Gästezimmer, die Ferienwohnung, das Café oder das Wartezimmer.
 
+<img src="assets/screenshot-en.webp" alt="WLAN-QR-Karte: links Netzwerkname, Verschlüsselung und Passwort, rechts die fertige Karte mit QR-Code, Netzwerkname und Passwort, darunter Teilen, PNG herunterladen, QR-Code als SVG, Kopieren und Drucken." width="720">
+
 ## Funktionen
 
 - 📶 **Alle Netzwerktypen** — WPA / WPA2 / WPA3, WEP, offene und versteckte Netzwerke

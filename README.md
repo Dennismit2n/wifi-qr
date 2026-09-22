@@ -6,6 +6,8 @@
 
 Create a printable WiFi QR card right in your browser. Guests point their phone camera at the code — no app, no password typing — and they're connected. Perfect for your fridge, guest room, vacation rental, café or waiting room.
 
+<img src="assets/screenshot-en.webp" alt="WiFi QR Card: network name, security and password on the left, the finished card with QR code, network name and password on the right, and below it share, download PNG, QR code as SVG, copy and print." width="720">
+
 ## Features
 
 - 📶 **All network types** — WPA / WPA2 / WPA3, WEP, open and hidden networks
