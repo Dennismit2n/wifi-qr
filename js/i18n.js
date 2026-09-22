@@ -51,7 +51,7 @@ var I18N = {
   en: {
     _name: 'English',
     appName: 'WiFi QR Card',
-    tagline: "Create a QR code for your WiFi – guests scan and they're in.",
+    tagline: "Create a QR code for your WiFi – guests scan and they’re in.",
     ssidLabel: 'Network name (SSID)',
     ssidPlaceholder: 'e.g. Smith Family WiFi',
     securityLabel: 'Security',
@@ -135,7 +135,7 @@ var I18N = {
   fr: {
     _name: 'Français',
     appName: 'Carte QR Wi-Fi',
-    tagline: "Créez un code QR pour votre Wi-Fi : vos invités scannent et c'est connecté.",
+    tagline: "Créez un code QR pour votre Wi-Fi : vos invités scannent et c’est connecté.",
     ssidLabel: 'Nom du réseau (SSID)',
     ssidPlaceholder: 'ex. Wi-Fi Maison Martin',
     securityLabel: 'Sécurité',
@@ -375,7 +375,7 @@ var I18N = {
     errNoPassword: "Lütfen şifreyi girin (veya 'Açık' seçin).",
     privacyNote: 'Şifreniz cihazınızdan asla çıkmaz; her şey tarayıcınızda gerçekleşir.',
     offlineNote: 'Çevrimdışı bile çalışır.',
-    footerSource: "GitHub'da açık kaynak",
+    footerSource: "GitHub’da açık kaynak",
     footerTranslate: 'Bazı çeviriler otomatik oluşturulmuştur; düzeltmelerinizi bekleriz!',
     footerAnalytics: 'Anonim ziyaret sayımı (GoatCounter, çerezsiz).',
     langLabel: 'Dil',

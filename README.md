@@ -4,7 +4,7 @@
 
 **➡️ Try it: [dennismit2n.github.io/wifi-qr](https://dennismit2n.github.io/wifi-qr/)** &nbsp;·&nbsp; 🇩🇪 [Deutsche Version dieser Seite](README.de.md)
 
-Create a printable WiFi QR card right in your browser. Guests point their phone camera at the code — no app, no password typing — and they're connected. Perfect for your fridge, guest room, vacation rental, café or waiting room.
+Create a printable WiFi QR card right in your browser. Guests point their phone camera at the code — no app, no password typing — and they’re connected. Perfect for your fridge, guest room, vacation rental, café or waiting room.
 
 <img src="assets/screenshot-en.webp" alt="WiFi QR Card: network name, security and password on the left, the finished card with QR code, network name and password on the right, and below it share, download PNG, QR code as SVG, copy and print." width="720">
 
@@ -19,7 +19,7 @@ Create a printable WiFi QR card right in your browser. Guests point their phone 
 
 ## Privacy
 
-The whole app is a handful of static files. There is no server, no CDN, no cookies, no accounts. The QR code is generated locally in your browser — turn on airplane mode and it still works. Don't take our word for it: open DevTools and watch the network tab, or read the source; it's all here.
+The whole app is a handful of static files. There is no server, no CDN, no cookies, no accounts. The QR code is generated locally in your browser — turn on airplane mode and it still works. Don’t take our word for it: open DevTools and watch the network tab, or read the source; it’s all here.
 
 *Analytics:* the app uses [GoatCounter](https://www.goatcounter.com) for anonymous, cookieless visit counting (disclosed in the footer). The script is vendored locally in `js/vendor/count.js`; the only external request is the count pixel. No personal data, no cookies, no cross-site tracking — and your WiFi password is never involved.
 
@@ -33,7 +33,7 @@ node tools/dev-server.js
 
 Then open http://localhost:8613. Edit, reload, done.
 
-**When deploying:** bump the `CACHE` constant in [sw.js](sw.js) so installed clients pick up the new version immediately. (The service worker also refreshes cached assets in the background — stale-while-revalidate — so even a forgotten bump heals itself on the visitor's next visit.)
+**When deploying:** bump the `CACHE` constant in [sw.js](sw.js) so installed clients pick up the new version immediately. (The service worker also refreshes cached assets in the background — stale-while-revalidate — so even a forgotten bump heals itself on the visitor’s next visit.)
 
 ## Translations
 
@@ -46,4 +46,4 @@ Interface strings live in [js/i18n.js](js/i18n.js). Some translations are machin
 
 ## License
 
-[MIT](LICENSE) for everything in this repository. The vendored files carry their own, both stated in their file headers: the QR generator by Kazuhiko Arase is MIT (credited above), and `js/vendor/count.js` is GoatCounter's counter script under the ISC license.
+[MIT](LICENSE) for everything in this repository. The vendored files carry their own, both stated in their file headers: the QR generator by Kazuhiko Arase is MIT (credited above), and `js/vendor/count.js` is GoatCounter’s counter script under the ISC license.
