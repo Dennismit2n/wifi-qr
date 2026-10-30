@@ -137,7 +137,9 @@ body {
 main {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: 1fr;
+  /* minmax(0, 1fr) statt 1fr: Sonst wird die Spalte so breit wie ihr breitester Inhalt, auf Russisch
+     schob das bei 320 px das Formular ueber den Rand. */
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
 }
 
