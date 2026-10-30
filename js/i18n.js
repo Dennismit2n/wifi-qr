@@ -8,6 +8,8 @@
 var I18N = {
   de: {
     _name: 'Deutsch',
+    installBtn: 'Installieren',
+    installDone: 'Als App installiert.',
     appName: 'WLAN-QR-Karte',
     tagline: 'QR-Code fürs WLAN erstellen – Gäste scannen und sind drin.',
     ssidLabel: 'Netzwerkname (SSID)',
@@ -50,6 +52,8 @@ var I18N = {
   },
   en: {
     _name: 'English',
+    installBtn: 'Install',
+    installDone: 'Installed as an app.',
     appName: 'WiFi QR Card',
     tagline: "Create a QR code for your WiFi – guests scan and they’re in.",
     ssidLabel: 'Network name (SSID)',
@@ -92,6 +96,8 @@ var I18N = {
   },
   es: {
     _name: 'Español',
+    installBtn: 'Instalar',
+    installDone: 'Instalación completada.',
     appName: 'Tarjeta QR WiFi',
     tagline: 'Crea un código QR para tu WiFi: tus invitados escanean y listo.',
     ssidLabel: 'Nombre de la red (SSID)',
@@ -134,6 +140,8 @@ var I18N = {
   },
   fr: {
     _name: 'Français',
+    installBtn: 'Installer',
+    installDone: 'Installation terminée.',
     appName: 'Carte QR Wi-Fi',
     tagline: "Créez un code QR pour votre Wi-Fi : vos invités scannent et c’est connecté.",
     ssidLabel: 'Nom du réseau (SSID)',
@@ -176,6 +184,8 @@ var I18N = {
   },
   it: {
     _name: 'Italiano',
+    installBtn: 'Installa',
+    installDone: 'Installazione completata.',
     appName: 'Tessera QR Wi-Fi',
     tagline: 'Crea un codice QR per il tuo Wi-Fi: gli ospiti scansionano e sono connessi.',
     ssidLabel: 'Nome della rete (SSID)',
@@ -218,6 +228,8 @@ var I18N = {
   },
   nl: {
     _name: 'Nederlands',
+    installBtn: 'Installeren',
+    installDone: 'Als app geïnstalleerd.',
     appName: 'Wifi-QR-kaart',
     tagline: 'Maak een QR-code voor je wifi – gasten scannen en zijn verbonden.',
     ssidLabel: 'Netwerknaam (SSID)',
@@ -260,6 +272,8 @@ var I18N = {
   },
   pl: {
     _name: 'Polski',
+    installBtn: 'Zainstaluj',
+    installDone: 'Zainstalowano jako aplikację.',
     appName: 'Karta QR Wi-Fi',
     tagline: 'Stwórz kod QR do swojego Wi-Fi – goście skanują i są w sieci.',
     ssidLabel: 'Nazwa sieci (SSID)',
@@ -302,6 +316,8 @@ var I18N = {
   },
   pt: {
     _name: 'Português',
+    installBtn: 'Instalar',
+    installDone: 'Instalação concluída.',
     appName: 'Cartão QR de Wi-Fi',
     tagline: 'Crie um código QR para o seu Wi-Fi — os convidados escaneiam e já estão conectados.',
     ssidLabel: 'Nome da rede (SSID)',
@@ -344,6 +360,8 @@ var I18N = {
   },
   tr: {
     _name: 'Türkçe',
+    installBtn: 'Yükle',
+    installDone: 'Uygulama olarak yüklendi.',
     appName: 'Wi-Fi QR Kartı',
     tagline: 'Wi-Fi ağınız için QR kod oluşturun; misafirleriniz taratıp bağlansın.',
     ssidLabel: 'Ağ adı (SSID)',
@@ -386,6 +404,8 @@ var I18N = {
   },
   ru: {
     _name: 'Русский',
+    installBtn: 'Установить',
+    installDone: 'Установлено как приложение.',
     appName: 'QR-карточка для Wi-Fi',
     tagline: 'Создайте QR-код для вашего Wi-Fi — гости сканируют и сразу в сети.',
     ssidLabel: 'Имя сети (SSID)',
@@ -428,6 +448,8 @@ var I18N = {
   },
   hi: {
     _name: 'हिन्दी',
+    installBtn: 'इंस्टॉल करें',
+    installDone: 'ऐप के रूप में इंस्टॉल हो गया।',
     appName: 'वाई-फ़ाई QR कार्ड',
     tagline: 'अपने वाई-फ़ाई के लिए QR कोड बनाएँ – मेहमान स्कैन करें और जुड़ जाएँ।',
     ssidLabel: 'नेटवर्क का नाम (SSID)',
@@ -470,6 +492,8 @@ var I18N = {
   },
   zh: {
     _name: '中文',
+    installBtn: '安装',
+    installDone: '已作为应用安装。',
     appName: 'WiFi 二维码卡片',
     tagline: '为你的 WiFi 生成二维码，客人扫一扫即可连接。',
     ssidLabel: '网络名称（SSID）',
@@ -512,6 +536,8 @@ var I18N = {
   },
   ja: {
     _name: '日本語',
+    installBtn: 'インストール',
+    installDone: 'アプリとしてインストールしました。',
     appName: 'Wi-Fi QRカード',
     tagline: 'Wi-FiのQRコードを作成。ゲストはスキャンするだけで接続できます。',
     ssidLabel: 'ネットワーク名（SSID）',
@@ -554,6 +580,8 @@ var I18N = {
   },
   ko: {
     _name: '한국어',
+    installBtn: '설치',
+    installDone: '앱으로 설치되었습니다.',
     appName: 'Wi-Fi QR 카드',
     tagline: 'Wi-Fi용 QR 코드를 만드세요 — 손님은 스캔만 하면 바로 연결돼요.',
     ssidLabel: '네트워크 이름 (SSID)',
