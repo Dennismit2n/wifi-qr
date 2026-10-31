@@ -466,6 +466,16 @@ main {
 :root[data-vision="contrast"] .wifi-card.is-demo { opacity: 1; border-style: dashed; }
 :root[data-vision="contrast"] :is(.panel, .btn, .field input, .field select, .lang-wrap select, #printMode, .install-btn) { border-width: 2px; }
 :root[data-vision="contrast"] :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+/* Am Handy teilen sich Darstellung und Sprache eine Zeile. Ein Auswahlfeld ist
+   so breit wie sein längster Eintrag, und das ist seit den acht Darstellungen
+   „Hoher Kontrast dunkel“ (ru „Для дальтоников, светлая“). Ohne diese Regel
+   rutschten die Felder bei 320 px in zwei Zeilen; die Darstellung bekommt den
+   größeren Teil, ein zu langer Eintrag wird im Feld gekappt. */
+@media (max-width: 560px) {
+  .header-controls .lang-wrap { flex: 1 1 0; min-width: 0; }
+  .header-controls .lang-wrap:has(#themeSelect) { flex-grow: 1.6; }
+  .header-controls .lang-wrap select { width: 100%; min-width: 0; }
+}
 :root[data-vision="contrast"] .site-footer a { text-decoration: underline; }
 
 /* Farbenblind: Fehler in Zinnober (Okabe-Ito) statt Rot, bleibt bei Rot- und
