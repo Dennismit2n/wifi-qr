@@ -423,3 +423,71 @@ main {
     height: 0;
   }
 }
+
+/* ---------- Sehhilfen: Hoher Kontrast, Farbenblind, Umgekehrte Farben ----------
+   (31.10.2026) Eine Wahl für die ganze Werkstatt: localStorage
+   „werkstatt.darstellung“, alle Werkzeuge liegen auf einem Ursprung. Das
+   Kopf-Skript setzt data-theme (light/dark, wie bisher) und data-vision
+   (contrast, cvd, invert). Die beiden Farbblöcke oben bleiben, wie sie sind. */
+
+/* Hoher Kontrast dunkel: Schwarz, Schrift #E0E0E0 (15,91:1), jede Farbe 7:1 */
+:root[data-vision="contrast"][data-theme="dark"] {
+  --bg: #000000;
+  --panel: #000000;
+  --text: #E0E0E0;
+  --text-soft: #C4C4C4;   /* 12,04 */
+  --border: #A0A0A0;      /* 8,03 */
+  --shadow: none;
+}
+
+/* Hoher Kontrast hell: Weiß, Schrift Schwarz, gleiche Farbtöne nachgedunkelt */
+:root[data-vision="contrast"][data-theme="light"] {
+  --accent: #005F78;      /* 7,22, auch Weiß auf dem Knopf */
+  --accent-strong: #155E75;
+  --bg: #FFFFFF;
+  --panel: #FFFFFF;
+  --text: #000000;
+  --text-soft: #2B2B2B;   /* 14,16 */
+  --border: #585757;      /* 7,20 */
+  --error: #B2000F;       /* 7,24 */
+  --shadow: none;
+}
+
+/* Die Karte bleibt weiß, sie ist die Druckvorschau. Im Hohen Kontrast werden
+   ihre leisen Grautöne (bis 2,56:1 in der Fußzeile) auf 7:1 nachgedunkelt. */
+:root[data-vision="contrast"] {
+  --card-soft: #49586E;   /* 7,23 */
+}
+:root[data-vision="contrast"] .card-head { color: #005F78; }
+:root[data-vision="contrast"] .card-footer { color: #4B586B; border-top-color: #585757; }
+:root[data-vision="contrast"] .wifi-card { border: 2px solid #585757; }
+/* Das Beispiel vor der ersten Eingabe ist sonst nur blasser (45 %), das reißt
+   jeden Kontrast. Hier steht es voll da und trägt einen gestrichelten Rahmen. */
+:root[data-vision="contrast"] .wifi-card.is-demo { opacity: 1; border-style: dashed; }
+:root[data-vision="contrast"] :is(.panel, .btn, .field input, .field select, .lang-wrap select, #printMode, .install-btn) { border-width: 2px; }
+:root[data-vision="contrast"] :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+:root[data-vision="contrast"] .site-footer a { text-decoration: underline; }
+
+/* Farbenblind: Fehler in Zinnober (Okabe-Ito) statt Rot, bleibt bei Rot- und
+   Grünschwäche sichtbar. Die Fehlermeldung steht ohnehin als Text da. */
+:root[data-vision="cvd"][data-theme="light"] { --error: #B75000; }  /* 4,61 */
+:root[data-vision="cvd"][data-theme="dark"] { --error: #D76004; }   /* 4,61 */
+
+/* Umgekehrte Farben wie der Farbfilter von Windows. Die Karte samt QR-Code
+   ist der Inhalt: sie wird ein zweites Mal umgedreht und bleibt so echt
+   (data-echt), damit der Code scannt und aussieht wie gedruckt. */
+:root[data-vision="invert"] { filter: invert(1); }
+:root[data-vision="invert"] :is(img:not([src*=".svg"]), video, [data-echt]):not([data-echt] *) { filter: invert(1); }
+/* Umdrehen erhält den WCAG-Kontrast nicht. Im Dunkeln kämen Akzent und
+   Fehler umgedreht auf 3,79 und 3,19; leicht angehoben halten sie 4,6. */
+@media (prefers-color-scheme: dark) {
+  :root[data-vision="invert"] {
+    --accent: #38DEF9;
+    --error: #FF8E8B;
+  }
+}
+/* Gedruckt wird nie umgedreht */
+@media print {
+  :root[data-vision="invert"],
+  :root[data-vision="invert"] :is(img:not([src*=".svg"]), video, [data-echt]):not([data-echt] *) { filter: none; }
+}
