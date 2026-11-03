@@ -21,8 +21,6 @@ Create a printable WiFi QR card right in your browser. Guests point their phone 
 
 The whole app is a handful of static files. There is no server, no CDN, no cookies, no accounts. The QR code is generated locally in your browser — turn on airplane mode and it still works. Don’t take our word for it: open DevTools and watch the network tab, or read the source; it’s all here.
 
-*Analytics:* the app uses [GoatCounter](https://www.goatcounter.com) for anonymous, cookieless visit counting (disclosed in the footer). The script is vendored locally in `js/vendor/count.js`; the only external request is the count pixel. No personal data, no cookies, no cross-site tracking — and your WiFi password is never involved.
-
 ## Development
 
 No build step, no dependencies.
@@ -46,4 +44,4 @@ Interface strings live in [js/i18n.js](js/i18n.js). Some translations are machin
 
 ## License
 
-[MIT](LICENSE) for everything in this repository. The vendored files carry their own, both stated in their file headers: the QR generator by Kazuhiko Arase is MIT (credited above), and `js/vendor/count.js` is GoatCounter’s counter script under the ISC license.
+[MIT](LICENSE) for everything in this repository. The vendored QR generator by Kazuhiko Arase carries its own MIT license (credited above), stated in its file headers.
