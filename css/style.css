@@ -584,5 +584,8 @@ main {
 .app-shell .wifi-card { box-shadow: -12px 14px 30px -6px rgba(0, 0, 0, 0.34); }
 /* Hoher Kontrast kennt keine Schatten, der Beschlag bleibt. Gedruckt wird ohne beides. */
 :root[data-vision="contrast"] :is(.lang-wrap select, #printMode, .install-btn, .panel, .btn, .app-shell .wifi-card) { box-shadow: none; }
+@media print {
+  .lang-wrap select, #printMode, .install-btn, .panel, .field input[type="text"], .field input[type="password"], .field select, .btn { background-image: none !important; box-shadow: none !important; }
+}
 /* Die Karte selbst bleibt ohne Beschlag: Sie ist die Vorschau dessen, was gedruckt wird. */
 /* Ende Beschlag */
