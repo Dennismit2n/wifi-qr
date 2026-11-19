@@ -1,7 +1,7 @@
 /* wifi-qr service worker — bump CACHE on every deploy so clients update cleanly */
 'use strict';
 
-var CACHE = 'wifi-qr-v20';
+var CACHE = 'wifi-qr-v21';
 var ASSETS = [
   './',
   './index.html',
